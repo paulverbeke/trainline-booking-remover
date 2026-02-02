@@ -35,8 +35,8 @@
             const checkboxes = document.querySelectorAll(selector);
             checkboxes.forEach(checkbox => {
                 if (checkbox.checked) {
-                    checkbox.checked = false;
-                    checkbox.click(); // Trigger click to ensure any event listeners are fired
+                    // Trigger click to uncheck and fire any event listeners
+                    checkbox.click();
                     console.log('[Trainline Booking Remover] Unchecked booking checkbox:', checkbox);
                     found = true;
                 }
@@ -52,7 +52,7 @@
                     const text = parent.textContent.toLowerCase();
                     if (text.includes('booking') || text.includes('accommodation')) {
                         if (checkbox.checked) {
-                            checkbox.checked = false;
+                            // Trigger click to uncheck and fire any event listeners
                             checkbox.click();
                             console.log('[Trainline Booking Remover] Unchecked booking checkbox by text match:', checkbox);
                             found = true;
@@ -76,14 +76,39 @@
     setTimeout(uncheckBookingCheckbox, 1000);
     setTimeout(uncheckBookingCheckbox, 2000);
 
+    // Debounce function to limit execution frequency
+    let debounceTimer;
+    function debounce(func, delay) {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(func, delay);
+    }
+
     // Set up a MutationObserver to watch for DOM changes
     const observer = new MutationObserver((mutations) => {
         // Check if any new checkboxes were added
+        let hasNewCheckbox = false;
         for (const mutation of mutations) {
             if (mutation.addedNodes.length > 0) {
-                uncheckBookingCheckbox();
-                break;
+                // Check if any added node is or contains a checkbox
+                for (const node of mutation.addedNodes) {
+                    if (node.nodeType === Node.ELEMENT_NODE) {
+                        if (node.matches && node.matches('input[type="checkbox"]')) {
+                            hasNewCheckbox = true;
+                            break;
+                        }
+                        if (node.querySelector && node.querySelector('input[type="checkbox"]')) {
+                            hasNewCheckbox = true;
+                            break;
+                        }
+                    }
+                }
+                if (hasNewCheckbox) break;
             }
+        }
+        
+        // Only trigger if a checkbox was actually added, and debounce to avoid excessive calls
+        if (hasNewCheckbox) {
+            debounce(uncheckBookingCheckbox, 300);
         }
     });
 
