@@ -3,6 +3,11 @@
   "name": "Trainline Booking Remover",
   "version": "1.0.0",
   "description": "Unchecks and removes the Booking.com checkbox on The Trainline website",
+  "icons": {
+    "32": "assets/icon-32.png",
+    "64": "assets/icon-64.png",
+    "128": "assets/icon-128.png"
+  },
   "browser_specific_settings": {
     "gecko": {
       "id": "trainline-booking-remover@example.com",

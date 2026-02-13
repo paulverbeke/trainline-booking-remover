@@ -4,7 +4,7 @@
   "description": "A browser extension to uncheck and remove the booking.com checkbox on thetrainline.com and prevent it from opening a new tab.",
   "scripts": {
     "build:clean": "node -e \"const fs=require('fs');if(fs.existsSync('dist'))fs.rmSync('dist',{recursive:true})\"",
-    "build:copy": "node -e \"const fs=require('fs');fs.cpSync('src','dist',{recursive:true})\"",
+    "build:copy": "node -e \"const fs=require('fs');fs.cpSync('src','dist',{recursive:true});fs.cpSync('assets','dist/assets',{recursive:true})\"",
     "build:zip": "node scripts/build-zip.js",
     "build": "npm-run-all build:clean build:copy build:zip",
     "validate": "web-ext lint --source-dir=dist",
