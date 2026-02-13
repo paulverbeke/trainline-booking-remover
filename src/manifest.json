@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Trainline Booking Remover",
+  "version": "1.0",
+  "description": "Unchecks and removes the Booking.com checkbox on The Trainline website",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://www.thetrainline.com/*"],
+      "js": ["content-scripts/content.js"]
+    }
+  ]
+}

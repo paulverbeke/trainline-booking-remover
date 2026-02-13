@@ -1,0 +1,21 @@
+{
+  "name": "trainline-booking-remover",
+  "version": "1.0.0",
+  "description": "A browser extension to uncheck and remove the booking.com checkbox on thetrainline.com and prevent it from opening a new tab.",
+  "main": "src/background/background.js",
+  "scripts": {
+    "build": "echo 'Build script placeholder'",
+    "test": "echo 'Test script placeholder'",
+    "lint": "echo 'Lint script placeholder'"
+  },
+  "keywords": [
+    "browser-extension",
+    "thetrainline",
+    "booking.com",
+    "userscript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
