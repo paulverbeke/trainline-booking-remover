@@ -1,6 +1,6 @@
 (new MutationObserver(check)).observe(document, {childList: true, subtree: true});
 
-function check(changes, observer) {
+function check(_changes, _observer) {
     let c;
     if ((c = document.getElementById('bookingPromo'))) {
         if (c.checked) {
