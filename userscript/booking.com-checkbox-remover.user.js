@@ -4,7 +4,7 @@
 // @namespace         http://tampermonkey.net/
 // @version           1.0
 // @description       Unchecks and removes the Booking.com checkbox on travel booking websites.
-// @description:fr    Décoche et retire la case Booking.com sur les sites de réservation de voyages
+// @description:fr    Décoche et retire les cases Booking.com sur les sites de réservation de voyages
 // @author            paulverbeke
 // @match             https://www.thetrainline.com/*
 // @match             https://www.flixbus.com/*
