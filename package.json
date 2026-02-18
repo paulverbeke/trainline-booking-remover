@@ -1,11 +1,13 @@
 {
   "name": "booking.com-checkbox-remover",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A browser extension to uncheck and remove the booking.com checkbox on several travel booking websites and prevent it from opening a new tab.",
   "scripts": {
+    "scrape:domains": "node scripts/scrape-domains.js",
+    "build:update-domains": "node scripts/update-domains.js",
     "build:update-version": "node scripts/update-version.js",
     "build:package": "web-ext build --source-dir=src --overwrite-dest --filename {name}-{version}.zip",
-    "build": "npm-run-all build:update-version build:package",
+    "build": "npm-run-all build:update-domains build:update-version build:package",
     "validate": "web-ext lint --source-dir=src",
     "lint": "eslint src scripts --fix"
   },
@@ -14,6 +16,7 @@
     "booking.com",
     "trainline",
     "flixbus",
+    "skyscanner",
     "userscript"
   ],
   "author": "Paul Verbeke",
