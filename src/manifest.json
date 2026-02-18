@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Trainline Booking Remover",
-  "version": "1.0.1",
-  "description": "Unchecks and removes the Booking.com checkbox on The Trainline website",
+  "name": "Booking.com Checkbox Remover",
+  "version": "1.0.2",
+  "description": "Unchecks and removes the Booking.com checkbox on several websites, like Trainline and FlixBus",
   "icons": {
     "32": "assets/icon-32.png",
     "64": "assets/icon-64.png",
@@ -25,7 +25,8 @@
   "content_scripts": [
     {
       "matches": [
-        "*://www.thetrainline.com/*"
+        "*://www.thetrainline.com/*",
+        "*://www.flixbus.com/*"
       ],
       "js": [
         "content-scripts/content.js"

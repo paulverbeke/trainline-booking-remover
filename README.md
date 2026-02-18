@@ -1,12 +1,12 @@
-# The Trainline Booking Remover Extension
+# Booking.com Checkbox Remover
 
-This project is a browser extension designed for the website [thetrainline.com](https://www.thetrainline.com). Its primary function is to automatically uncheck the checkbox for their partner booking.com, preventing the opening of a new tab for booking.com when searching for train schedules. It then also remove checkbox visually from the page.
+This project is a browser extension that automatically unchecks and removes the booking.com checkbox on several travel booking websites including [Trainline](https://www.thetrainline.com) and [FlixBus](https://www.flixbus.com). Its primary function is to prevent the opening of a new tab for booking.com when searching for travel options.
 
 ## Features
 
-- Automatically unchecks the booking.com checkbox on the Trainline website.
+- Automatically unchecks the booking.com checkbox on supported websites (Trainline and FlixBus).
 - Removes the booking.com checkbox visually from the page.
-- Prevents the opening of a new tab for booking.com when a train schedule search is performed.
+- Prevents the opening of a new tab for booking.com when searching for travel options.
 - Available as both a browser extension for Chrome and Firefox, and as a Tampermonkey userscript for users who prefer not to install the extension.
 
 ## Installation
@@ -23,9 +23,9 @@ This project is a browser extension designed for the website [thetrainline.com](
 
 ## Usage
 
-- Once the extension is installed or the userscript is active, navigate to the Trainline website.
-- The booking.com checkbox will be automatically unchecked and will be visually removed
-- Perform a search for train schedules, a new tab will not open for booking.com, and you'll stay on the same tab to view your search results.
+- Once the extension is installed or the userscript is active, navigate to any supported website (Trainline, FlixBus, etc.).
+- The booking.com checkbox will be automatically unchecked and will be visually removed.
+- Perform a search for travel options, a new tab will not open for booking.com, and you'll stay on the same tab to view your search results.
 
 ## Development
 

@@ -1,7 +1,7 @@
 {
-  "name": "trainline-booking-remover",
-  "version": "1.0.1",
-  "description": "A browser extension to uncheck and remove the booking.com checkbox on thetrainline.com and prevent it from opening a new tab.",
+  "name": "booking.com-checkbox-remover",
+  "version": "1.0.2",
+  "description": "A browser extension to uncheck and remove the booking.com checkbox on several travel booking websites and prevent it from opening a new tab.",
   "scripts": {
     "build:update-version": "node scripts/update-version.js",
     "build:package": "web-ext build --source-dir=src --overwrite-dest --filename {name}-{version}.zip",
@@ -11,8 +11,9 @@
   },
   "keywords": [
     "browser-extension",
-    "thetrainline",
     "booking.com",
+    "trainline",
+    "flixbus",
     "userscript"
   ],
   "author": "Paul Verbeke",
