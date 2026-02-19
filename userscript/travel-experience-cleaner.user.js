@@ -2,7 +2,7 @@
 // @name              Travel Experience Cleaner
 // @name:fr           Simplifier l'expérience de voyage
 // @namespace         http://tampermonkey.net/
-// @version           1.0.3
+// @version           1.0.4
 // @description       Unchecks promotional checkboxes and hotel search options on travel booking websites.
 // @description:fr    Simplifie votre expérience de voyage en décochant automatiquement les cases promotionnelles et les options de recherche hôtel
 // @author            paulverbeke
@@ -108,6 +108,43 @@
 // @match             *://www.skyscanner.se/*
 // @match             *://www.skyscanner.sk/*
 // @match             *://www.tianxun.com/*
+// @match             *://www.es.momondo.com/*
+// @match             *://www.fr.momondo.be/*
+// @match             *://www.fr.momondo.ca/*
+// @match             *://www.fr.momondo.ch/*
+// @match             *://www.it.momondo.ch/*
+// @match             *://www.momondo.at/*
+// @match             *://www.momondo.be/*
+// @match             *://www.momondo.ca/*
+// @match             *://www.momondo.ch/*
+// @match             *://www.momondo.cl/*
+// @match             *://www.momondo.co.uk/*
+// @match             *://www.momondo.co.za/*
+// @match             *://www.momondo.com/*
+// @match             *://www.momondo.com.au/*
+// @match             *://www.momondo.com.br/*
+// @match             *://www.momondo.com.co/*
+// @match             *://www.momondo.com.pe/*
+// @match             *://www.momondo.com.tr/*
+// @match             *://www.momondo.cz/*
+// @match             *://www.momondo.de/*
+// @match             *://www.momondo.dk/*
+// @match             *://www.momondo.ee/*
+// @match             *://www.momondo.es/*
+// @match             *://www.momondo.fi/*
+// @match             *://www.momondo.fr/*
+// @match             *://www.momondo.ie/*
+// @match             *://www.momondo.in/*
+// @match             *://www.momondo.it/*
+// @match             *://www.momondo.mx/*
+// @match             *://www.momondo.nl/*
+// @match             *://www.momondo.no/*
+// @match             *://www.momondo.pl/*
+// @match             *://www.momondo.pt/*
+// @match             *://www.momondo.ro/*
+// @match             *://www.momondo.se/*
+// @match             *://www.momondo.ua/*
+// @match             *://www.ru.momondo.ua/*
 // @grant             none
 // ==/UserScript==
 
@@ -117,6 +154,7 @@ function check(_changes, _observer) {
     handleTrainlineBookingPromo();
     handleFlixbusBookingPromo();
     handleSkycannerHotelOption();
+    handleMomondoHotelOptions();
 }
 
 function handleTrainlineBookingPromo() {
@@ -159,4 +197,21 @@ function handleSkycannerHotelOption() {
     if (checkbox.checked) {
         checkbox.click();
     }
+}
+
+function handleMomondoHotelOptions() {
+    // Momondo shows various promotional checkboxes depending on the route:
+    // Booking.com, Trip.com, Air France, Vueling, etc.
+    // All follow the pattern: id="pres-default-*"
+    const checkboxes = document.querySelectorAll('input[id^="pres-default-"]');
+    
+    checkboxes.forEach(checkbox => {
+        if (checkbox.dataset.tecHandled === 'true') {
+            return;
+        }
+        checkbox.dataset.tecHandled = 'true';
+        if (checkbox.checked) {
+            checkbox.click();
+        }
+    });
 }

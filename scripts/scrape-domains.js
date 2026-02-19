@@ -96,7 +96,8 @@ async function updateDomainsFromWeb() {
   // Define sites to scrape with their URLs
   const sites = [
     { key: 'flixbus', name: 'Flixbus', url: 'https://www.flixbus.com' },
-    { key: 'skyscanner', name: 'Skyscanner', url: 'https://www.skyscanner.com' }
+    { key: 'skyscanner', name: 'Skyscanner', url: 'https://www.skyscanner.com' },
+    { key: 'momondo', name: 'Momondo', url: 'https://www.momondo.com' }
   ];
 
   // Scrape each site
@@ -111,6 +112,7 @@ async function updateDomainsFromWeb() {
   console.log('\n✓ Updated domains.json');
   console.log(`  - Flixbus: ${domains.flixbus.length} domains`);
   console.log(`  - Skyscanner: ${domains.skyscanner.length} domains`);
+  console.log(`  - Momondo: ${domains.momondo.length} domains`);
 }
 
 updateDomainsFromWeb().catch((err) => {

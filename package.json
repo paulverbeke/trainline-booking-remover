@@ -1,6 +1,6 @@
 {
   "name": "travel-experience-cleaner",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A browser extension that unchecks promotional checkboxes and hotel search options on travel booking websites like Trainline, FlixBus, and Skyscanner.",
   "scripts": {
     "scrape:domains": "node scripts/scrape-domains.js",

@@ -32,6 +32,11 @@ function buildMatches() {
     pushUnique(`*://${domain}/*`);
   });
 
+  // Momondo - exact domains
+  (domains.momondo || []).forEach((domain) => {
+    pushUnique(`*://${domain}/*`);
+  });
+
   return matches;
 }
 
