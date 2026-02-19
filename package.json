@@ -1,7 +1,7 @@
 {
-  "name": "booking.com-checkbox-remover",
+  "name": "travel-experience-cleaner",
   "version": "1.0.3",
-  "description": "A browser extension to uncheck and remove the booking.com checkbox on several travel booking websites and prevent it from opening a new tab.",
+  "description": "A browser extension that unchecks promotional checkboxes and hotel search options on travel booking websites like Trainline, FlixBus, and Skyscanner.",
   "scripts": {
     "scrape:domains": "node scripts/scrape-domains.js",
     "build:update-domains": "node scripts/update-domains.js",

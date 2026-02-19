@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name              Booking.com Checkbox Remover
-// @name:fr           Retirer les cases Booking.com
+// @name              Travel Experience Cleaner
+// @name:fr           Simplifier l'expérience de voyage
 // @namespace         http://tampermonkey.net/
-// @version           1.0
-// @description       Unchecks and removes the Booking.com checkbox on travel booking websites.
-// @description:fr    Décoche et retire les cases Booking.com sur les sites de réservation de voyages
+// @version           1.0.3
+// @description       Unchecks promotional checkboxes and hotel search options on travel booking websites.
+// @description:fr    Simplifie votre expérience de voyage en décochant automatiquement les cases promotionnelles et les options de recherche hôtel
 // @author            paulverbeke
 // @match             *://www.thetrainline.com/*
 // @match             *://es-us.flixbus.com/*
@@ -124,11 +124,13 @@ function handleTrainlineBookingPromo() {
     if (!checkbox) {
         return;
     }
+    if (checkbox.dataset.tecHandled === 'true') {
+        return;
+    }
+    checkbox.dataset.tecHandled = 'true';
     if (checkbox.checked) {
         checkbox.click();
     }
-    // Remove the complete booking.com element 4 levels up
-    checkbox.parentElement?.parentElement?.parentElement?.parentElement?.remove();
 }
 
 function handleFlixbusBookingPromo() {
@@ -136,11 +138,13 @@ function handleFlixbusBookingPromo() {
     if (!checkbox) {
         return;
     }
+    if (checkbox.dataset.tecHandled === 'true') {
+        return;
+    }
+    checkbox.dataset.tecHandled = 'true';
     if (checkbox.checked) {
         checkbox.click();
     }
-    // Remove the complete booking.com element 3 levels up
-    checkbox.parentElement?.parentElement?.parentElement?.remove();
 }
 
 function handleSkycannerHotelOption() {
@@ -148,10 +152,11 @@ function handleSkycannerHotelOption() {
     if (!checkbox) {
         return;
     }
+    if (checkbox.dataset.tecHandled === 'true') {
+        return;
+    }
+    checkbox.dataset.tecHandled = 'true';
     if (checkbox.checked) {
         checkbox.click();
     }
-    // Remove the complete hotel option container 2 levels up
-    checkbox.parentElement?.parentElement?.remove();
 }
-

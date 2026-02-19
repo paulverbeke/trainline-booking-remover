@@ -1,33 +1,41 @@
-# Booking.com Checkbox Remover
+# Travel Experience Cleaner
 
-This project is a browser extension that automatically unchecks and removes the booking.com checkbox on several travel booking websites including [Trainline](https://www.thetrainline.com) and [FlixBus](https://www.flixbus.com). Its primary function is to prevent the opening of a new tab for booking.com when searching for travel options.
+This project is a browser extension that defaults promotional checkboxes and
+hotel search options to unchecked on several travel booking websites including
+[Trainline](https://www.thetrainline.com), [FlixBus](https://www.flixbus.com),
+and [Skyscanner](https://www.skyscanner.com). Its primary function is to
+prevent unwanted promotional tabs from automatically opening when searching
+for travel options, while still letting users re-enable them.
 
 ## Features
 
-- Automatically unchecks the booking.com checkbox on supported websites (Trainline and FlixBus).
-- Removes the booking.com checkbox visually from the page.
-- Prevents the opening of a new tab for booking.com when searching for travel options.
+- Unchecks promotional checkboxes once on Trainline and FlixBus, without
+   preventing user changes.
+- Unchecks Skyscanner's hotel search option once, without
+   preventing user changes.
+- Prevents promotional tabs from automatically opening when searching for travel options.
 - Available as both a browser extension for Chrome and Firefox, and as a Tampermonkey userscript for users who prefer not to install the extension.
 
 ## Installation
 
 ### Browser Extension
 
-[![Firefox Add-on](https://img.shields.io/badge/Firefox-Get%20it%20now-FF7139?style=flat&logo=firefox)](https://addons.mozilla.org/firefox/addon/bookingdotcom-checkbox-remover/)
+[![Firefox Add-on](https://img.shields.io/badge/Firefox-Get%20it%20now-FF7139?style=flat&logo=firefox)](https://addons.mozilla.org/firefox/addon/travel-experience-cleaner/)
 
 Chrome Web Store (coming soon)
 
 ### Tampermonkey Userscript
 
 1. Install the Tampermonkey extension from the Chrome Web Store or Firefox Add-ons.
-2. Create a new script in Tampermonkey and copy the contents of `userscript/trainline-booking-remover.user.js` into it.
+2. Create a new script in Tampermonkey and copy the contents of `userscript/travel-experience-cleaner.user.js` into it.
 3. Save the script and ensure it is enabled.
 
 ## Usage
 
-- Once the extension is installed or the userscript is active, navigate to any supported website (Trainline, FlixBus, etc.).
-- The booking.com checkbox will be automatically unchecked and will be visually removed.
-- Perform a search for travel options, a new tab will not open for booking.com, and you'll stay on the same tab to view your search results.
+- Once the extension is installed or the userscript is active, navigate to any supported website (Trainline, FlixBus, Skyscanner, etc.).
+- Promotional checkboxes are unchecked once when they appear.
+- If you re-enable a checkbox, the script will not uncheck it again.
+- Perform a search for travel options, and unwanted promotional tabs will not open automatically.
 
 ## Development
 
@@ -103,38 +111,48 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 ---
 
-# Retirer les cases Booking.com
+# Simplifier l'expérience de voyage
 
-[English](#bookingcom-checkbox-remover) | **Français**
+[English](#travel-experience-cleaner) | **Français**
 
-Ce projet est une extension de navigateur qui décoche et supprime automatiquement la case booking.com sur plusieurs sites de réservation de voyage, notamment [Trainline](https://www.thetrainline.com) et [FlixBus](https://www.flixbus.com). Sa fonction principale est d'empêcher l'ouverture d'un nouvel onglet pour booking.com lors de la recherche d'options de voyage.
+Ce projet est une extension de navigateur qui décoche par défaut les cases
+promotionnelles et les options de recherche hôtel sur plusieurs sites de
+réservation de voyage, notamment [Trainline](https://www.thetrainline.com),
+[FlixBus](https://www.flixbus.com) et [Skyscanner](https://www.skyscanner.com).
+Sa fonction principale est d'empêcher l'ouverture automatique d'onglets
+promotionnels lors de la recherche d'options de voyage, tout en laissant la
+possibilité de les réactiver.
 
 ## Fonctionnalités
 
-- Décoche automatiquement la case booking.com sur les sites web pris en charge (Trainline et FlixBus).
-- Supprime visuellement la case booking.com de la page.
-- Empêche l'ouverture d'un nouvel onglet pour booking.com lors de la recherche d'options de voyage.
+- Décoche une seule fois les cases promotionnelles sur Trainline et FlixBus, sans
+   empêcher un changement manuel.
+- Décoche une seule fois l'option de recherche hôtel de Skyscanner, sans
+   empêcher un changement manuel.
+- Empêche les onglets promotionnels de s'ouvrir automatiquement lors de la recherche d'options de voyage.
 - Disponible à la fois comme extension de navigateur pour Chrome et Firefox, et comme script utilisateur Tampermonkey pour les utilisateurs qui préfèrent ne pas installer l'extension.
 
 ## Installation
 
 ### Extension de navigateur
 
-[![Complément Firefox](https://img.shields.io/badge/Firefox-Télécharger%20maintenant-FF7139?style=flat&logo=firefox)](https://addons.mozilla.org/fr/firefox/addon/bookingdotcom-checkbox-remover/)
+[![Extension Firefox](https://img.shields.io/badge/Firefox-Télécharger%20maintenant-FF7139?style=flat&logo=firefox)](https://addons.mozilla.org/firefox/addon/travel-experience-cleaner/)
 
 Chrome Web Store (bientôt disponible)
 
 ### Script utilisateur Tampermonkey
 
 1. Installez l'extension Tampermonkey depuis le Chrome Web Store ou Firefox Add-ons.
-2. Créez un nouveau script dans Tampermonkey et copiez le contenu de `userscript/trainline-booking-remover.user.js` dedans.
+2. Créez un nouveau script dans Tampermonkey et copiez le contenu de `userscript/travel-experience-cleaner.user.js` dedans.
 3. Enregistrez le script et assurez-vous qu'il est activé.
 
 ## Utilisation
 
-- Une fois l'extension installée ou le script utilisateur actif, accédez à n'importe quel site web pris en charge (Trainline, FlixBus, etc.).
-- La case à cocher booking.com sera automatiquement déverrouillée et supprimée visuellement.
-- Effectuez une recherche d'options de voyage, aucun nouvel onglet ne s'ouvrira pour booking.com, et vous resterez sur le même onglet pour consulter vos résultats de recherche.
+- Une fois l'extension installée ou le script utilisateur actif, accédez à n'importe quel site web pris en charge (Trainline, FlixBus, Skyscanner, etc.).
+- Les cases promotionnelles sont décochées une seule fois lorsqu'elles
+   apparaissent.
+- Si vous réactivez une case, le script ne la décochera plus.
+- Effectuez une recherche d'options de voyage, et les onglets promotionnels indésirables ne s'ouvriront pas automatiquement.
 
 ## Développement
 

@@ -11,11 +11,13 @@ function handleTrainlineBookingPromo() {
     if (!checkbox) {
         return;
     }
+    if (checkbox.dataset.tecHandled === 'true') {
+        return;
+    }
+    checkbox.dataset.tecHandled = 'true';
     if (checkbox.checked) {
         checkbox.click();
     }
-    // Remove the complete booking.com element 4 levels up
-    checkbox.parentElement?.parentElement?.parentElement?.parentElement?.remove();
 }
 
 function handleFlixbusBookingPromo() {
@@ -23,11 +25,13 @@ function handleFlixbusBookingPromo() {
     if (!checkbox) {
         return;
     }
+    if (checkbox.dataset.tecHandled === 'true') {
+        return;
+    }
+    checkbox.dataset.tecHandled = 'true';
     if (checkbox.checked) {
         checkbox.click();
     }
-    // Remove the complete booking.com element 3 levels up
-    checkbox.parentElement?.parentElement?.parentElement?.remove();
 }
 
 function handleSkycannerHotelOption() {
@@ -35,16 +39,11 @@ function handleSkycannerHotelOption() {
     if (!checkbox) {
         return;
     }    
+    if (checkbox.dataset.tecHandled === 'true') {
+        return;
+    }
+    checkbox.dataset.tecHandled = 'true';
     if (checkbox.checked) {
         checkbox.click();
     }
-    
-    // Verify parent element has ParallelSearch class before removing
-    const parentToRemove = checkbox.parentElement?.parentElement;
-    if (!parentToRemove || !parentToRemove.className.includes('ParallelSearch')) {
-        return;
-    }
-
-    // Remove the complete hotel option container 2 levels up
-    parentToRemove.remove();
 }

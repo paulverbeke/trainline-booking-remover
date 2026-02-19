@@ -5,7 +5,7 @@ const path = require('path');
 const rootPath = path.join(__dirname, '..');
 const domainsPath = path.join(rootPath, 'domains.json');
 const manifestPath = path.join(rootPath, 'src', 'manifest.json');
-const userscriptPath = path.join(rootPath, 'userscript', 'booking.com-checkbox-remover.user.js');
+const userscriptPath = path.join(rootPath, 'userscript', 'travel-experience-cleaner.user.js');
 
 const domains = JSON.parse(fs.readFileSync(domainsPath, 'utf-8'));
 

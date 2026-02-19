@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Booking.com Checkbox Remover",
+  "name": "Travel Experience Cleaner",
   "version": "1.0.3",
-  "description": "Unchecks and removes the Booking.com checkbox on several websites, like Trainline and FlixBus",
+  "description": "Unchecks promotional checkboxes and hotel search options on travel booking websites like Trainline, FlixBus, and Skyscanner",
   "icons": {
     "32": "assets/icon-32.png",
     "64": "assets/icon-64.png",
@@ -10,7 +10,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "trainline-booking-remover@example.com",
+      "id": "{0e04d3fb-7f95-423c-9cf8-d7a819629364}",
       "data_collection_permissions": {
         "required": [
           "none"
